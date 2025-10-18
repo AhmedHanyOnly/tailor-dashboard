@@ -1,0 +1,22 @@
+{
+  "login": {
+    "title": "تسجيل الدخول",
+    "subtitle": "أدخل بريدك الإلكتروني وكلمة المرور لتسجيل الدخول",
+    "google": "تسجيل الدخول عبر Google",
+    "x": "تسجيل الدخول عبر X",
+    "or": "أو",
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "info@gmail.com",
+    "password": "كلمة المرور",
+    "passwordPlaceholder": "أدخل كلمة المرور",
+    "rememberMe": "تذكرني",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "loginButton": "تسجيل الدخول",
+    "noAccount": "ليس لديك حساب؟",
+    "signUp": "إنشاء حساب",
+    "emailRequired": "البريد الإلكتروني مطلوب",
+    "passwordRequired": "كلمة المرور مطلوبة",
+    "loggingIn": "جاري التسجيل...."
+  }
+
+}
