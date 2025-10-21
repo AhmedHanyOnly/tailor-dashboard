@@ -49,6 +49,11 @@ const navItems: NavItem[] = [
     name: "العملاء",
     path: "/clients",
   },
+    {
+    icon: <UserCircleIcon />,
+    name: "الخطط",
+    path: "/plans",
+  },
   //   {
   //   icon: <BoxIcon />,
   //   name: "المنتجات",

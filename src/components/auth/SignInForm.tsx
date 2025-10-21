@@ -25,6 +25,7 @@ export default function SignInForm() {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
+  const [Loader, setLoader] = useState(false);
 
   const {
     register,
@@ -46,20 +47,22 @@ export default function SignInForm() {
 
         // تخزين الكوكيز (في حال SSR)
         document.cookie = `token=${data.token}; path=/; SameSite=Lax`;
-
+        setLoader(false);
         toast.success(data.message || t('login.loginSuccess'));
         router.push('/');
       } else {
-        toast.error(data.message );
+        toast.error(data.message);
       }
     },
     onError: (err: any) => {
-      const message = err?.response?.data?.message ;
+      const message = err?.response?.data?.message;
       toast.error(message);
+      setLoader(false);
     },
   });
 
   const onSubmit: SubmitHandler<FormValues> = (formData) => {
+    setLoader(true);
     loginMutation.mutate(formData);
   };
 
@@ -123,24 +126,24 @@ export default function SignInForm() {
                   {t('login.rememberMe')}
                 </span>
               </div>
-              <Link
+              {/* <Link
                 href="/reset-password"
                 className="text-brand-500 hover:text-brand-600 dark:text-brand-400 text-sm"
               >
                 {t('login.forgotPassword')}
-              </Link>
+              </Link> */}
             </div>
 
             {/* Submit */}
             <div>
-              <Button className="w-full" size="sm" disabled={loginMutation.isLoading}>
-                {loginMutation.isLoading ? t('login.loggingIn') : t('login.loginButton')}
+              <Button className="w-full" size="sm" disabled={Loader}>
+                {Loader ? t('login.loggingIn') : t('login.loginButton')}
               </Button>
             </div>
           </div>
         </form>
 
-        <div className="mt-5">
+        {/* <div className="mt-5">
           <p className="text-center text-sm font-normal text-gray-700 sm:text-start dark:text-gray-400">
             {t('login.noAccount')}{' '}
             <Link
@@ -150,7 +153,7 @@ export default function SignInForm() {
               {t('login.signUp')}
             </Link>
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );
