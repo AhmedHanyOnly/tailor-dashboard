@@ -8,11 +8,11 @@ import RecentOrders from "@/components/ecommerce/RecentOrders";
 
 export const metadata: Metadata = {
   title:
-    "POS",
-  description: "This is Next.js Home for TailAdmin Dashboard Template",
+    "الخياط - لوحة التحكم - الصفحة الرئيسية",
+  description: "لوحة تحكم الإدارة للخياط",
 };
 
-export default function Ecommerce() {
+export default function Home() {
 
 
 
@@ -20,15 +20,8 @@ export default function Ecommerce() {
     <div className="grid grid-cols-12 gap-4 md:gap-6">
       <div className="col-span-12 space-y-6 xl:col-span-12">
         <EcommerceMetrics />
-
         <MonthlySalesChart />
       </div>
-
-
-   
-
-
-    
     </div>
   );
 }

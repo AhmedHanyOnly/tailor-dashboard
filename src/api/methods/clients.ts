@@ -19,21 +19,21 @@ export interface ClientsResponse {
 }
 
 export async function getClients(): Promise<Client[]> {
-  const { data } = await api.get<ClientsResponse>('/api/clients');
+  const { data } = await api.get<ClientsResponse>('/clients');
   return data.data;
 }
 
 export async function createClient(clientData: Omit<Client, 'id' | 'createdBy'>): Promise<Client> {
-  const { data } = await api.post<{ data: Client }>('/api/clients', clientData);
+  const { data } = await api.post<{ data: Client }>('/clients', clientData);
   return data.data;
 }
 
 export async function updateClient(id: number, clientData: Partial<Omit<Client, 'id' | 'createdBy'>>): Promise<Client> {
-  const { data } = await api.put<{ data: Client }>(`/api/clients/${id}`, clientData);
+  const { data } = await api.put<{ data: Client }>(`/clients/${id}`, clientData);
   return data.data;
 }
 
 export async function deleteClient(id: number): Promise<{ message: string }> {
-  const { data } = await api.delete<{ message: string }>(`/api/clients/${id}`);
+  const { data } = await api.delete<{ message: string }>(`/clients/${id}`);
   return data;
 }

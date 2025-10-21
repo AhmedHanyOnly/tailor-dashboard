@@ -19,6 +19,7 @@ import {
   TableIcon,
   UserCircleIcon,
 } from "../icons/index";
+import { FiSettings } from "react-icons/fi";
 
 type NavItem = {
   name: string;
@@ -38,31 +39,36 @@ const navItems: NavItem[] = [
   //   name: "Calendar",
   //   path: "/calendar",
   // },
+  {
+    icon: <FiSettings />,
+    name: "الإعدادات",
+    path: "/settings",
+  },
     {
     icon: <UserCircleIcon />,
     name: "العملاء",
     path: "/clients",
   },
-    {
-    icon: <BoxIcon />,
-    name: "المنتجات",
-    path: "/products",
-  },
-    {
-    icon: <ListIcon />,
-    name: "الاقسام",
-    path: "/categories",
-  },
+  //   {
+  //   icon: <BoxIcon />,
+  //   name: "المنتجات",
+  //   path: "/products",
+  // },
+  //   {
+  //   icon: <ListIcon />,
+  //   name: "الاقسام",
+  //   path: "/categories",
+  // },
     {
     icon: <ListIcon />,
     name: "طرق الدفع",
     path: "/payment-methods",
   },
-    {
-    icon: <ListIcon />,
-    name: "الوحدات",
-    path: "/units",
-  },
+  //   {
+  //   icon: <ListIcon />,
+  //   name: "الوحدات",
+  //   path: "/units",
+  // },
   // {
   //   icon: <UserCircleIcon />,
   //   name: "User Profile",
